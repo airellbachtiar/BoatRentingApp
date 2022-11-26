@@ -1,0 +1,67 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.ProceedCartPageModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/proceedcartstyle.css" />
+}
+@{
+    int totalAmount = Model.carts.Sum(cart => cart.Amount);
+    double totalCost = Model.carts.Sum(cart => (cart.Item.Cost * cart.Amount));
+    double totalDeposit = Model.carts.Sum(cart => (cart.Item.Deposit * cart.Amount));
+}
+
+<table class="cart-table">
+
+    <tr class="cart-table-header">
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Deposit</th>
+        <th>Amount</th>
+    </tr>
+
+    @foreach (Cart c in Model.carts)
+    {
+        <tr>
+            <td>@c.Item.Name</td>
+            <td>@c.Item.Cost</td>
+            <td>@c.Item.Deposit</td>
+            <td>@c.Amount</td>
+        </tr>
+    }
+
+    <tr class="cart-table-total">
+        <td>Total</td>
+        <td>@totalCost</td>
+        <td>@totalDeposit</td>
+        <td>@totalAmount</td>
+    </tr>
+
+</table>
+
+<div class="input-group">
+    <form method="post">
+        <span asp-validation-for="PhoneNumber" style="color: orangered; font-size: 12px;"></span><label>Phone Number</label><input asp-for="PhoneNumber" type="text" value="@Model.user.PhoneNumber">
+
+        <span asp-validation-for="StreetName" style="color: orangered; font-size: 12px;"></span><label>Street Name</label><input asp-for="StreetName" type="text">
+        <span asp-validation-for="Zipcode" style="color: orangered; font-size: 12px;"></span><label>Zipcode</label><input asp-for="Zipcode" type="text">
+        <span asp-validation-for="HouseNumber" style="color: orangered; font-size: 12px;"></span><label>House Number</label><input asp-for="HouseNumber" type="number">
+        <span asp-validation-for="City" style="color: orangered; font-size: 12px;"></span><label>City</label><input asp-for="City" type="text">
+
+        <span asp-validation-for="StartDate" style="color: orangered; font-size: 12px;"></span><label>Start Date</label><input asp-for="StartDate" type="date" value="@DateTime.Today.Year-@DateTime.Today.Month.ToString().PadLeft(2, '0')-@DateTime.Today.Day.ToString().PadLeft(2, '0')">
+
+        <span asp-validation-for="Location" style="color: orangered; font-size: 12px;"></span><label>Location</label><input asp-for="Location" type="text">
+        <span asp-validation-for="Duration" style="color: orangered; font-size: 12px;"></span><label>Duration</label><input asp-for="Duration" type="number" min="2" max="336" step="2" value="2">
+
+        <div class="checkbox">
+            <span asp-validation-for="IsChecked" style="color: orangered; font-size: 12px;"></span><label>I sign this</label><input asp-for="IsChecked" type="checkbox">
+        </div>
+
+        <label>Coupon</label><input asp-for="CouponCode" type="text">
+        @if (ViewData["CouponCode"] != null)
+        {
+            <label>@ViewData["CouponCode"]</label>
+        }
+        <input type="submit" asp-page-handler="CheckCoupon" value="Check Coupon">
+
+        <input type="submit" asp-page-handler="AddReservation" value="Add Reservation">
+    </form>
+</div>

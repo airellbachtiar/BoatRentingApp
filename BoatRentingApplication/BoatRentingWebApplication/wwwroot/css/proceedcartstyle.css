@@ -1,0 +1,29 @@
+﻿.cart-table {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    color: aliceblue;
+    width: 40%;
+    text-align: center;
+    border-collapse: collapse;
+    empty-cells: hide;
+}
+
+.input-group {
+    position: absolute;
+    right: 20%;
+    top: 15%;
+    width: 180px;
+    color: aliceblue;
+}
+
+.input-group a{
+    text-decoration: none;
+    color: orangered;
+    display: block;
+}
+
+.checkbox{
+    margin: 10px 0px;
+    display: block;
+}

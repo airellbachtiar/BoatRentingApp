@@ -1,0 +1,48 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+.navbar{
+    padding: 0px 20px;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+header nav ul li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: ghostwhite;
+    padding: 0 20px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+a:hover{
+    color: cornflowerblue;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    white-space: nowrap;
+    line-height: 60px;
+    color: slategrey;
+    margin-left: 5%;
+}
+
+footer a{
+    text-decoration: none;
+    color: cornflowerblue;
+}

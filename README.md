@@ -1,1 +1,2 @@
-# BoatRentingApp
+# S2-Synthesis-Assignment-Airell
+

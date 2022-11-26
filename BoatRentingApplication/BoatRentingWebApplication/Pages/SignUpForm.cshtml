@@ -1,0 +1,25 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.SignUpFormModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/signupstyle.css" />
+}
+
+
+<div class="center">
+    <form method="post">
+        <h1>Sign Up</h1>
+        <div class="register_container">
+            <div><span asp-validation-for="Name" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Name" placeholder="Name"></div>
+            <div><span asp-validation-for="Username" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Username" placeholder="Username"></div>
+            <div><span asp-validation-for="Email" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Email" placeholder="Email"></div>
+            <div><span asp-validation-for="PhoneNumber" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="PhoneNumber" placeholder="Phone Number" value=""></div>
+            <div><span asp-validation-for="Password" style="color: orangered; font-size: 12px;"></span><input type="password" asp-for="Password" placeholder="Password"></div>
+            <div><span asp-validation-for="ConfirmPassword" style="color: orangered; font-size: 12px;"></span><input type="password" asp-for="ConfirmPassword" placeholder="Repeat Password"></div>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Sign Up">
+            <p class="Text">OR</p>
+            <a class="Login" asp-page="/LoginForm">Login</a>
+        </div>
+    </form>
+</div>

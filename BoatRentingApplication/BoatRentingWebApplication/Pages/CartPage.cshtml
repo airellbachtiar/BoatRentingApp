@@ -1,0 +1,60 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.CartPageModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/cartstyle.css" />
+}
+@{
+    int totalAmount = Model.carts.Sum(cart => cart.Amount);
+    double totalCost = Model.carts.Sum(cart => (cart.Item.Cost * cart.Amount));
+    double totalDeposit = Model.carts.Sum(cart => (cart.Item.Deposit * cart.Amount));
+}
+
+<div class="overview_container">
+
+    <table class="cart-table">
+
+        <tr class="cart-table-header">
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Deposit</th>
+            <th>Amount</th>
+        </tr>
+
+        @foreach (Cart c in Model.carts)
+        {
+            <tr>
+                <td>@c.Item.Name</td>
+                <td>@c.Item.Cost</td>
+                <td>@c.Item.Deposit</td>
+                <td>
+                    <form method="post">
+                        <input asp-for="Amount" type="number" value="@c.Amount" min="0" max="@((Model.InventoryItems.Where(inv => inv.IsAvailable && inv.Item.ItemID == c.Item.ItemID)).Count())">
+                        <input type="text" value="@c.Item.ItemID" asp-for="ItemID" style="display:none;">
+                        <input type="submit" value="Change">
+                    </form>
+                </td>
+            </tr>
+        }
+        
+
+        <tr class="cart-table-total">
+            <td>Total</td>
+            <td>@totalCost</td>
+            <td>@totalDeposit</td>
+            <td>@totalAmount</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @if (Model.carts.Count != 0)
+                {
+                    <a asp-page="/ProceedCartPage">Proceed</a>
+                }
+            </td>
+        </tr>
+    </table>
+    
+</div>

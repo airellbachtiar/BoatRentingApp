@@ -1,0 +1,21 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.LoginFormModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/loginstyle.css" />
+}
+
+<div class="login_parent">
+    
+    <div class="login_container">
+        <span>Login</span>
+        <form method="post">
+            <span asp-validation-for="Username" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Username" value="" placeholder="Username">
+            <span asp-validation-for="Password" style="color: orangered; font-size: 12px;"></span><input type="password" asp-for="Password" value="" placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="signup_container">
+        <p>Don't have an account?</p>
+        <a asp-page="/SignUpForm">Sign Up</a>
+    </div>
+</div>

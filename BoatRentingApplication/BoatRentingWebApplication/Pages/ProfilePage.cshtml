@@ -1,0 +1,25 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.ProfilePageModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/profilestyle.css" />
+}
+
+<div class="profile_parent">
+
+    <div class="edit_profile_container">
+        <form method="post">
+            <span asp-validation-for="Username" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Username" value="@Model.user.Username" placeholder="Username" readonly="readonly">
+            <span asp-validation-for="Name" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Name" value="@Model.user.Name" placeholder="Name">
+            <span asp-validation-for="Email" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="Email" value="@Model.user.Email" placeholder="Email">
+            <span asp-validation-for="PhoneNumber" style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="PhoneNumber" value="@Model.user.PhoneNumber" placeholder="PhoneNumber">
+            <span style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="StreetName" value="@(((BoatRentingClassLibrary.Customer)Model.user).Address.StreetName)" placeholder="Street Name">
+            <span style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="ZipCode" value="@(((BoatRentingClassLibrary.Customer)Model.user).Address.ZipCode)" placeholder="Zip Code">
+            <span style="color: orangered; font-size: 12px;"></span><input type="number" asp-for="HouseNumber" value="@(((BoatRentingClassLibrary.Customer)Model.user).Address.HouseNumber)" placeholder="House Number">
+            <span style="color: orangered; font-size: 12px;"></span><input type="text" asp-for="City" value="@(((BoatRentingClassLibrary.Customer)Model.user).Address.City)" placeholder="City">
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+    <div class="change_password_container">
+        <a asp-page="/ChangePasswordPage">To change password</a>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿.center{
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.register_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". ."
+        ". ."
+        ". .";
+}
+
+.submit {
+    padding: 10px;
+}
+
+
+form input[type=text], input[type=password] {
+    background: rgba(248, 248, 255, 0.15);
+    width: 90%;
+    color: ghostwhite;
+    margin: 20px auto;
+    border: none;
+    border-bottom: 1px solid ghostwhite;
+    border-right: 1px solid ghostwhite;
+    border-radius: 5px;
+    padding: 10px 5px;
+    box-shadow: 2px 2px ghostwhite;
+}
+
+form input[type=text], input[type=password]:focus{
+    outline: none;
+}
+
+form input[type=submit] {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: rgba(180, 57, 255, 0.6);
+    cursor: pointer;
+    color: ghostwhite;
+    font-weight: 600;
+}
+
+.submit p {
+    font-size: 14px;
+    color: ghostwhite;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.submit a {
+    text-decoration: none;
+    color: cornflowerblue;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+h1{
+    color: ghostwhite;
+    font-weight: 600;
+}

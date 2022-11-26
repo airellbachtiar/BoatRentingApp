@@ -1,0 +1,55 @@
+General Info
+‘t Sloepke B.V.
+(Company Name)
+Has multiple branches in the Netherlands and has one main office in Eindhoven
+
+Case Description
+Mainly for renting boats
+Has 2 types of boats, KAYAK and CANOE
+If located at a big body of water, additional, SAILBOAT LASER and SAILBOAT VALKF
+Life jackets, waterproof containers, cool boxes, navigation devices, etc. can be rented
+
+Rental Process
+(HIGHEST PRIORITY)
+1. Placing reservation
+	Infos taken: Contact, Address, Duration(Multiple of 2 Hours, Min. 2 Hours, Max. 2 Weeks), Location, Boats and Items(only for available one)
+	Customer must sign/agree with the rental quote and after that customer has access to their rental reservation
+	7 days before the start of the rental, customer can edit their reservation and have to re-agree the new rental quote
+2. Using the items
+	Customer pay deposit(Deposit can be seen on project description based on the type of boats)
+	After pay, employee will take customer to their items and explain how to use it and they can depart
+3. Returning
+	After the returns, employee inspect any damage to the items. Customer must pay the damage from (deposit-rental price) and then additional price
+
+Requirements
+MUST
+Non-Functional
+1. OO Principles
+2. Bug Free
+3. Security
+
+Functional
+1. Employee at the main office can CRUD boats and items in the company inventory
+2. Customer can place a reservation, agreement can be done using checkbox(website, step 1.1)
+	Employee can RUD reservation of customers(step 1.2, 1.3)(can be in application)
+
+MAJOR
+1.
+
+Question:
+How specific location in reservation would be? Is just the location name sufficient?
+
+Colot pallete
+Black Color(Primary): #29262B or rgb(41, 38, 43)
+Black Color(Second Primary): #3C3541 or rgb(60, 53, 65)
+Purple(Secondary): #AC5FDB or rgb(172, 95, 219)
+Purple(Second Secondary): #E3A2EE or rgb(227, 162, 238)
+Ghost White: #F8F8FF or rgb(248, 248, 255)
+Secondary White: #FFFAFA or rgb(255, 250, 250) or #AEAEB3 or rgb(174, 174, 179)
+
+To do Last Week:
+UML-Update and change DAL
+VS-Check and add DAL - DONE
+URS-Add MOSCOW - DONE
+Project Plan-Make new one - DONE
+DB-Put DB into hera - DONE

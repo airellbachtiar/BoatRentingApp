@@ -1,0 +1,26 @@
+﻿
+.cart-table {
+    position: relative;
+    margin: auto;
+    margin-top: 80px;
+    color: aliceblue;
+    width: 70%;
+    text-align: center;
+    border-collapse: collapse;
+    empty-cells: hide;
+}
+
+.cart-table-header {
+    background-color: rgba(248, 248, 255, 0.3);
+    font-size: 23px;
+}
+
+.cart-table-total {
+    background-color: rgba(41, 38, 43, 0.7);
+    font-size: 23px;
+}
+
+.cart-table a {
+    text-decoration: none;
+    color: cornflowerblue;
+}

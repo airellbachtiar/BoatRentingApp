@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/indexstyle.css" />
+}
+
+<div class="content-container">
+    @foreach (BoatRentingClassLibrary.Item i in Model.Items)
+    {
+        @if ((Model.InventoryItems.Where(inv => inv.IsAvailable && inv.Item.ItemID == i.ItemID)).Count() != 0)
+        {
+            <article class="item-list">
+                <h1>@i.Name</h1>
+                <p>@i.Cost | @i.Deposit</p>
+                <p>Available: @((Model.InventoryItems.Where(inv => inv.IsAvailable && inv.Item.ItemID == i.ItemID)).Count())</p>
+                <p>@i.Description</p>
+                <form method="post">
+                    <input type="text" asp-for="ItemID" value="@i.ItemID" style="display:none;">
+                    <input asp-for="Amount" value="0" type="number" min="0" max="@((Model.InventoryItems.Where(inv => inv.IsAvailable && inv.Item.ItemID == i.ItemID)).Count())">
+                    <input type="submit">
+                </form>
+    </article>
+        }
+    }
+</div>

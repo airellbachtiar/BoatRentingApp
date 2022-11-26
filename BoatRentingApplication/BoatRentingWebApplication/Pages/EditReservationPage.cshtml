@@ -1,0 +1,93 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.EditReservationPageModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/proceedcartstyle.css" />
+}
+@{ 
+    string startMonth = Model.Reservation.DateDetail.StartDate.Month.ToString().PadLeft(2, '0');
+    string startYear = Model.Reservation.DateDetail.StartDate.Year.ToString();
+    string startDay = Model.Reservation.DateDetail.StartDate.Day.ToString().PadLeft(2, '0');
+}
+
+<table class="cart-table">
+
+    <tr class="cart-table-header">
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Deposit</th>
+        <th>Amount</th>
+    </tr>
+
+    @foreach (BoatRentingClassLibrary.InventoryItem inv in Model.Reservation.InventoryItems)
+    {
+        <tr>
+            <td>@inv.Item.Name</td>
+            <td>@inv.Item.Cost</td>
+            <td>@inv.Item.Deposit</td>
+            <td>1</td>
+        </tr>
+    }
+
+    <tr class="cart-table-total">
+        <td>Total</td>
+        <td>@Model.Reservation.PriceDetail.TotalPrice</td>
+        <td>@Model.Reservation.PriceDetail.TotalDeposit</td>
+        <td>@Model.Reservation.InventoryItems.Count</td>
+    </tr>
+    <tr class="cart-table-total">
+        <td>Damage Price</td>
+        <td>@Model.Reservation.PriceDetail.DamagePrice</td>
+        <td>Actual Price:</td>
+        <td>@Model.Reservation.PriceDetail.ActualPrice</td>
+    </tr>
+    <tr class="cart-table-total">
+        <td>Status</td>
+        <td>@Model.Reservation.Status</td>
+        <td>Rentee</td>
+        <td>@Model.Reservation.User.Name</td>
+    </tr>
+
+</table>
+
+<div class="input-group">
+    <form method="post">
+        <input type="text" value="@Model.Reservation.ReferenceNumber" asp-for="ReferenceNumber" readonly="readonly">
+
+        <span asp-validation-for="PhoneNumber" style="color: orangered; font-size: 12px;"></span><label>Phone Number</label><input asp-for="PhoneNumber" type="text" value="@Model.Reservation.PhoneNumber">
+
+        <span asp-validation-for="StreetName" style="color: orangered; font-size: 12px;"></span><label>Street Name</label><input asp-for="StreetName" type="text" value="@Model.Reservation.Address.StreetName">
+        <span asp-validation-for="Zipcode" style="color: orangered; font-size: 12px;"></span><label>Zipcode</label><input asp-for="Zipcode" type="text" value="@Model.Reservation.Address.ZipCode">
+        <span asp-validation-for="HouseNumber" style="color: orangered; font-size: 12px;"></span><label>House Number</label><input asp-for="HouseNumber" type="number" value="@Model.Reservation.Address.HouseNumber">
+        <span asp-validation-for="City" style="color: orangered; font-size: 12px;"></span><label>City</label><input asp-for="City" type="text" value="@Model.Reservation.Address.City">
+
+        <span asp-validation-for="StartDate" style="color: orangered; font-size: 12px;"></span><label>Start Date</label><input asp-for="StartDate" type="date" value="@startYear-@startMonth-@startDay">
+
+        <span asp-validation-for="Location" style="color: orangered; font-size: 12px;"></span><label>Location</label><input asp-for="Location" type="text" value="@Model.Reservation.Location">
+        <span asp-validation-for="Duration" style="color: orangered; font-size: 12px;"></span><label>Duration</label><input asp-for="Duration" type="number" min="2" max="336" step="2" value="@Model.Reservation.DateDetail.Duration">
+
+        <div class="checkbox">
+            <span asp-validation-for="IsChecked" style="color: orangered; font-size: 12px;"></span><label>I sign this</label><input asp-for="IsChecked" type="checkbox">
+        </div>
+
+        @if (Model.Reservation.Coupon != null)
+        {
+            <label>Coupon</label><input asp-for="CouponCode" type="text" value="@Model.Reservation.Coupon.Code">
+        }
+        else
+        {
+            <label>Coupon</label><input asp-for="CouponCode" type="text">
+        }
+
+        @if (ViewData["CouponCode"] != null)
+        {
+            <label>@ViewData["CouponCode"]</label>
+        }
+
+        @if (DateTime.Now <= Model.Reservation.DateDetail.StartDate.AddDays(-7))
+        {
+            <input type="submit" asp-page-handler="CheckCoupon" value="Check Coupon">
+            <input type="submit" asp-page-handler="SaveReservation" value="Save Reservation">
+            <a asp-route-ReferenceNumber="@Model.Reservation.ReferenceNumber" asp-page-handler="CancelReservation">Cancel Reservation</a>
+        }
+    </form>
+</div>

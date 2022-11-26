@@ -1,0 +1,2278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>248</y>
+      <w>42</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IRentItem
+--
+-id: int
+-name: string
+-costPer2Hours: decimal
+-deposit: decimal
+-description: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>202</y>
+      <w>42</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IPerson
+--
+-id: int
+-name: string
+-email: string
+-phoneNummber: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>234</y>
+      <w>42</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IEmployee
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>998</x>
+      <y>234</y>
+      <w>42</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ICustomer
+--
+-address: string
+-zipcode: string
+-city: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>196</y>
+      <w>42</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IReservation
+--
+-referenceNumber: int
+-renteeID: int
+-location: string
+-rentedItems: List&lt;IRented&gt;
+-dateCreated: DateTime
+-startDate: DateTime
+-endDate: DateTime
+-couponID: int
+-totalDeposit: decimal
+-totalPrice: decimal
+-actualPrice: decimal
+-acceptedBy: int
+-isAgreed: bool
+-status: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>208</y>
+      <w>42</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IRentedItem
+--
+-itemID: int
+-quantityRented: int
+-duration: int
+-totalDeposit: decimal
+-totalPrice: decimal</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>218</y>
+      <w>30</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-rentedItems</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>38</y>
+      <w>18</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>ITEM
+--
+ItemID
+Name
+Cost
+Deposit
+Description
+IsBoat</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>404</x>
+      <y>38</y>
+      <w>28</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>INVENTORYITEM
+--
+ItemID
+InventoryItemID
+Status
+IsAvailable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>332</x>
+      <y>182</y>
+      <w>26</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>RESERVATION
+--
+ReferenceNumber
+CustomerID
+Location
+DateCreated
+StartDate
+Duration
+CouponID
+DamageTotal
+Status</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>182</y>
+      <w>26</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>RENTEDITEM
+--
+ReferenceNumber
+ItemInInventoryID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>126</y>
+      <w>26</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>CUSTOMER
+--
+CustomerID
+Name
+Username
+Email
+PhoneNumber
+Password
+Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>102</y>
+      <w>26</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>EMPLOYEE
+--
+EmployeeID
+Name
+Username
+Email
+PhoneNumber
+Password</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>148</y>
+      <w>108</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IDBAccess&lt;T&gt;
+--
++Create(obj: T): bool
++Update(obj: T): bool
++Read(): List&lt;T&gt;
++Remove(obj: T): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>594</y>
+      <w>56</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>ItemDAL
+--
++ItemDAL(dBAccessItem: IStorageAccess)
++GetAll(): List&lt;Item&gt;
++Update(item: Item): bool
++Add(item: Item): bool
++Remove(item: Item): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>458</y>
+      <w>70</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>CustomerDAL
+--
++CustomerDAL(dBAccessCustomer: IStorageAccess)
++GetAll(): List&lt;Customer&gt;
++Update(customer: Customer): bool
++Add(customer: Customer): bool
++Remove(customer: Customer): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>518</y>
+      <w>120</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_itemDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>470.0;10.0;470.0;440.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1094</x>
+      <y>468</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_customerDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>390.0;180.0;390.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>226</y>
+      <w>54</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessItem
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessItem(connectionString: String)
++Create(item: Item): bool
++Update(item: Item): bool
++Read(): List&lt;Item&gt;
++Remove(item: Item): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1006</x>
+      <y>158</y>
+      <w>92</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;440.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>114</y>
+      <w>28</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>158</y>
+      <w>28</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>74</y>
+      <w>28</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;430.0;10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>64</y>
+      <w>28</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>MAINTENANCE
+--
+InventoryItemID
+MaintenanceID
+StartDate
+EndDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>326</x>
+      <y>50</y>
+      <w>18</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>COUPON
+--
+CouponID
+Code
+Discount</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>88</y>
+      <w>34</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>LIMITEDCOUPON
+--
+CouponID
+RemainingUses
+TotalUses</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>106</y>
+      <w>34</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>EXCLUSIVECOUPON
+--
+CouponID
+CustomerID
+IsRedeemed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>74</y>
+      <w>34</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>TIMECOUPON
+--
+CouponID
+EndDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>206</y>
+      <w>30</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ICoupon
+--
+-couponID: int
+-code: string
+-discount: decimal</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>222</y>
+      <w>44</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ILimitedCoupon
+--
+-numberOfUsesRemaining: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>714</x>
+      <y>202</y>
+      <w>30</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IExclusiveCoupon
+--
+-customerID: int
+-isRedeemed: bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>210</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>222</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>214</y>
+      <w>30</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+r1=-Coupon</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>200</y>
+      <w>36</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>RESERVATIONSTATUS
+--
+OPEN
+READY
+ON_GOING
+CHECK_UP
+PAYMENT
+CLOSE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>72</y>
+      <w>36</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>MAINTENANCESTATUS
+--
+COMING_SOON
+ON_MAINTENANCE
+COMPLETED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>522</x>
+      <y>92</y>
+      <w>36</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>INVENTORYSTATUS
+--
+AVAILABLE
+BOOKED
+ON_RENT
+UNDER_MAINTENANCE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>404</x>
+      <y>12</y>
+      <w>24</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>BOAT
+--
+ItemID
+InventoryItemID
+Capacity
+Status
+IsAvailable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>434</y>
+      <w>88</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>User
+--
++User(email: string, name: string, username: string, password: string)
++ID{get;set;}: int
++Name{get;set;}: string
++Username{get;set;}: string
++Email{get;set;}: string
++PhoneNumber{get;set;}: string
++Password{get;set;}: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>646</x>
+      <y>454</y>
+      <w>96</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>Employee
+--
++Employee(email: string, name: string, username: string, password: string)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>456</y>
+      <w>20</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>646</x>
+      <y>440</y>
+      <w>96</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
++Customer(email: string, name: string, username: string, password: string)
++Address{get;set;}: Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>432</y>
+      <w>98</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Address
+--
++Address(streetName: string, zipCode: string, houseNumber: int, city: string)
++StreetName{get;set;}: string
++ZipCode{get;set;}: string
++HouseNumber{get;set;}: int
++City{get;set;}: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>442</y>
+      <w>20</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>440</y>
+      <w>24</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -address
+r1= 0..1</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>476</x>
+      <y>476</y>
+      <w>48</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Coupon
+--
++Coupon(code: string, discount: int)
++CouponID{get;set;}: int
++Code{get;set;}: string
++Discount{get;set;}: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>398</x>
+      <y>496</y>
+      <w>68</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>TimeCoupon
+--
++TimeCoupon(coupon: Coupon, endDate: DateTime)
++EndDate{get;set;}: DateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>478</y>
+      <w>64</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>LimitedCoupon
+--
++LimitedCoupon(coupon: Coupon, totalUses: int)
++TotalUses{get;set;}: int
++RemainingUses{get;set;}: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>460</y>
+      <w>68</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>ExclusiveCoupon
+--
++ExclusiveCoupon(coupon: Coupon, customerID: int)
++CustomerID{get;set;}: int
++IsRedeemed{get;set;}: bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>484</y>
+      <w>16</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>492</y>
+      <w>18</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;70.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>468</y>
+      <w>20</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;40.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>326</x>
+      <y>546</y>
+      <w>104</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Item
+--
++Item(name: string, cost: double, deposit: double, description: string, isBoat: bool)
++ItemID{get;set;}: int
++Name{get;set;}: string
++Cost{get;set;}: double
++Deposit{get;set;}: double
++Description{get;set;}: string
++IsBoat{get;set;}: bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>476</y>
+      <w>36</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>InventoryItem
+--
++InventoryItem(item: Item)
++InventoryID{get;set;}: int
++Status{get;set;}: string
++IsAvailable{get;set;}: bool
++Item{get;set;}: Item
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>334</x>
+      <y>496</y>
+      <w>12</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= 1
+r1= -item</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>364</y>
+      <w>122</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
++Reservation(user: User, inventoryItems: List&lt;InventoryItem, startDate: DateTime, duration: int&gt;)
++ReferenceNumber{get;set;}: int
++PhoneNumber{get;set;}: string
++Location{get;set;}: string
++Status{get;set;}: string
++DateDetail{get;set;}: ReservationDateDetail
++PriceDetail{get;set;}: ReservationPriceDetail
++User{get;set;}: User
++Coupon{get;set;}: Coupon
++InventoryItems{get;set;}: List&lt;InventoryItems&gt;
++Address{get;set;}: Address</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>266</x>
+      <y>364</y>
+      <w>76</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>ReservationDateDetail
+--
++ReservationDateDetail(startDate: DateTime, duration: int)
++DateCreated{get;set;}: DateTime
++StartDate{get;set;}: DateTime
++Duration{get;set;}: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>266</x>
+      <y>386</y>
+      <w>78</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>ReservationPriceDetail
+--
++ReservationPriceDetail(inventoryItems: List&lt;InventoryItem&gt;)
++TotalDeposit{get;}: double
++TotalPrice{get;}: double
++Discount{get;set;}: double
++ActualPrice{get;}: double
++DamagePrice{get;set;}: double
++CustomerPay{get;}: double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>148</y>
+      <w>32</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Parser&lt;T&gt;
+--
++Parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>788</x>
+      <y>130</y>
+      <w>32</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>ItemParser&lt;Item&gt;
+--
++Parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>826</x>
+      <y>130</y>
+      <w>38</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>CustomerParser&lt;Customer&gt;
+--
++Parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>868</x>
+      <y>130</y>
+      <w>38</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>EmployeeParser&lt;Employee&gt;
+--
++Parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>130</y>
+      <w>44</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>ReservationParser&lt;Reservation&gt;
+--
++Parser</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>404</y>
+      <w>156</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-user
+r1=1</panel_attributes>
+    <additional_attributes>730.0;180.0;730.0;140.0;10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>404</y>
+      <w>16</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-coupon
+r1=0..1</panel_attributes>
+    <additional_attributes>10.0;360.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>332</x>
+      <y>404</y>
+      <w>138</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-InventoryItem
+r1=*</panel_attributes>
+    <additional_attributes>10.0;360.0;10.0;90.0;670.0;90.0;670.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>500</y>
+      <w>70</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>EmployeeDAL
+--
++EmployeeDAL(dBAccessEmployee: IStorageAccess)
++GetAll(): List&lt;Employee&gt;
++Update(employee: Employee): bool
++Add(employee: Employee): bool
++Remove(employee: Employee): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1094</x>
+      <y>504</y>
+      <w>78</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_employeeDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>404</y>
+      <w>74</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>ReservationDAL
+--
++ReservationDAL(dbAccessReservation: IStorageAccess)
++GetAll(): List&lt;Reservation&gt;
++Update(reservation: Reservation): bool
++Add(reservation: Reservation): bool
++Remove(reservation: Reservation): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>414</y>
+      <w>140</w>
+      <h>94</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_reservationDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>530.0;450.0;530.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>548</y>
+      <w>70</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>CouponDAL
+--
++CouponDAL(dBAccessCoupon: IStorageAccess)
++GetAll(): List&lt;Coupon&gt;
++Update(coupon: Coupon): bool
++Add(coupon: Coupon): bool
++Remove(coupon: Coupon): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1094</x>
+      <y>512</y>
+      <w>78</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_couponDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>370.0;20.0;220.0;20.0;220.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>100</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessCustomer
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessCustomer(connectionString: String)
++Create(customer: Customer): bool
++Update(customer: Customer): bool
++Read(): List&lt;Customer&gt;
++Remove(customer: Customer): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>142</y>
+      <w>62</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessEmployee
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessEmployee(connectionString: String)
++Create(employee: Employee): bool
++Update(employee: Employee): bool
++Read(): List&lt;Employee&gt;
++Remove(employee: Employee): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>60</y>
+      <w>62</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessReservation
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessReservation(connectionString: String)
++Create(reservation: Reservation): bool
++Update(reservation: Reservation): bool
++Read(): List&lt;Reservation&gt;
++Remove(reservation: Reservation): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>184</y>
+      <w>62</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessCoupon
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessCoupon(connectionString: String)
++Create(coupon: Coupon): bool
++Update(coupon: Coupon): bool
++Read(): List&lt;Coupon&gt;
++Remove(coupon: Coupon): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>158</y>
+      <w>28</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0;120.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>530</y>
+      <w>84</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>EmployeeController
+--
++EmployeeController(employeeDAL: IStorageOption&lt;Employee&gt;)
++GetAllUser(): List&lt;User&gt;
++AddUser(user: User): bool
++UpdateUser(user: User): bool
++RemoveUser(user: User): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>494</y>
+      <w>82</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>CustomerController
+--
++CustomerController(customerDAL: IStorageOption&lt;Customer&gt;)
++GetAllUser(): List&lt;Customer&gt;
++AddUser(customer: Customer): bool
++UpdateUser(customer: Customer): bool
++RemoveUser(customer: Customer): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>630</y>
+      <w>98</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>InventoryItemController
+--
++InventoryItemController(inventoryItemDAL: IStorageOption&lt;InventoryItem&gt;)
++GetAllInventoryItem(): List&lt;InventoryItem&gt;
++GetInventoryItem(inventoryId: int): InventoryItem
++GetInventoryItems(itemId: int, amount: int): List&lt;InventoryItem&gt;
++AddInventoryItem(inventoryItem: InventoryItem): bool
++UpdateInventoryItem(inventoryItem: InventoryItem): bool
++RemoveInventoryItem(inventoryItem: InventoryItem): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>496</y>
+      <w>24</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-inventoryItems</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;670.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>548</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CouponController
+--
++CouponController(couponDAL: IStorageOption&lt;Coupon&gt;)
++GetAllCoupon(): List&lt;Coupon&gt;
++GetCoupon(couponID: int): Coupon
++AddCoupon(coupon: Coupon): bool
++UpdateCoupon(coupon: Coupon): bool
++RemoveCoupon(coupon: Coupon): bool
++AssignCoupon(user: User, previousCoupon: Coupon, newCoupon: Coupon): Coupon
+-CheckAssignCoupon(coupon: Coupon, user: User): bool
+-CheckCancelCoupon(coupon: Coupon): bool
+-CheckDuplicate(coupon: Coupon): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>558</x>
+      <y>388</y>
+      <w>94</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>ReservationController
+--
++ReservationController(reservationDAL: IStorageOption&lt;Reservation&gt;)
++GetAllReservation(): List&lt;Reservation&gt;
++AddReservation(reservation: Reservation): bool
++UpdateReservation(reservation: Reservation): bool
++RemoveReservation(reservation: Reservation): bool
+-CheckAddReservation(reservation: Reservation): bool
+-CheckUpdateReservation(reservation: Reservation): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>392</y>
+      <w>42</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-reservations</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>202</y>
+      <w>28</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;120.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>400</y>
+      <w>254</w>
+      <h>146</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-reservationDAL</panel_attributes>
+    <additional_attributes>1150.0;710.0;1150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>508</y>
+      <w>140</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-customerDAL</panel_attributes>
+    <additional_attributes>590.0;170.0;590.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>544</y>
+      <w>114</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-employeeDAL</panel_attributes>
+    <additional_attributes>550.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>554</y>
+      <w>288</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-couponDAL</panel_attributes>
+    <additional_attributes>1420.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>562</y>
+      <w>480</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-itemDAL</panel_attributes>
+    <additional_attributes>2380.0;20.0;1050.0;20.0;1050.0;230.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>492</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-coupons</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>372</y>
+      <w>64</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-dateDetail
+r1=1</panel_attributes>
+    <additional_attributes>10.0;20.0;300.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>398</y>
+      <w>62</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-priceDetail
+r1=1</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>518</y>
+      <w>42</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IUserController
+--
++GetAllUser(): List&lt;User&gt;
++AddUser(user: User): bool
++UpdateUser(user: User): bool
++RemoveUser(user: User): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>460</y>
+      <w>14</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-users</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>474</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>IUserController
+--
++UserController(_userController: IUserController)
++GetAllUser(): List&lt;User&gt;
++GetUser(id: int): User
++AddUser(user: User): bool
++UpdateUser(user: User): bool
++RemoveUser(user: User): bool
++Login(username: string, password: string): User
+-CheckDuplicate(user: User): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>504</y>
+      <w>26</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= _userController
+r1= 1</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>520</y>
+      <w>24</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>518</y>
+      <w>16</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;60.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>648</x>
+      <y>508</y>
+      <w>16</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>476</y>
+      <w>76</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>InventoryBoat
+--
++InventoryBoat(item: Item, capacity: int)
++Capacity{get;set;}: int
++MaintenanceRecords{get;set;}: List&lt;MentainenceRecord&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>284</x>
+      <y>484</y>
+      <w>26</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>156</x>
+      <y>512</y>
+      <w>102</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>MaintenanceRecord
+--
++MaintenanceRecord(inventoryID: int, startDate: DateTime, endDate:DateTime)
++InventoryRecordID{get;set;}: int
++MaintenanceID{get;set;}: int
++StartDate{get;set;}: DateTime
++EndDate{get;set;}: DateTime
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>212</x>
+      <y>492</y>
+      <w>34</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-maintenanceRecords</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>586</y>
+      <w>48</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ItemController
+--
++ItemController(itemDAL: IStorageOption&lt;Item&gt;)
++GetAllItem(): List&lt;Item&gt;
++GetItem(id: int): Item
++AddItem(item: Item): bool
++UpdateItem(item: Item): bool
++RemoveItem(item: Item): bool
+-CheckDuplicate(item: Item): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>344</x>
+      <y>572</y>
+      <w>14</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-items</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1026</x>
+      <y>632</y>
+      <w>78</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>InventoryItemDAL
+--
++InventoryItemDAL(dBAccessInventoryItem: IStorageAccess)
++GetAll(): List&lt;InventoryItem&gt;
++Update(inventoryItem: InventoryItem): bool
++Add(inventoryItem: InventoryItem): bool
++Remove(inventoryItem: InventoryItem): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>268</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessInventoryItem
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessInventoryItem(connectionString: String)
++Create(inventoryItem: InventoryItem): bool
++Update(inventoryItem: InventoryItem): bool
++Read(): List&lt;InventoryItem&gt;
++Remove(inventoryItem: InventoryItem): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>242</y>
+      <w>28</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;120.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1102</x>
+      <y>518</y>
+      <w>136</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_inventoryItemDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>500.0;10.0;500.0;640.0;10.0;640.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>346</x>
+      <y>572</y>
+      <w>538</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-inventoryItemDAL</panel_attributes>
+    <additional_attributes>2560.0;10.0;2560.0;370.0;10.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>582</x>
+      <y>312</y>
+      <w>30</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>_LoggedUser_
+--
+_+User{get;set;}: User_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>312</y>
+      <w>48</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>_PasswordSecurity_
+--
+_+GenerateHash(input: string): string_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>326</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>_TemporaryStorage_
+--
+_-TemporaryStorage()_
+_+EmployeeList{get;set;}: IList&lt;Employee&gt;_
+_+CustomerList{get;set;}: IList&lt;Customer&gt;_
+_+CouponList{get;set;}: IList&lt;Coupon&gt;_
+_+InventoryItemList{get;set;}: IList&lt;InventoryItem&gt;_
+_+ItemList{get;set;}: IList&lt;Item&gt;_
+_+MaintenanceRecordList{get;set;}: IList&lt;MaintenanceRecord&gt;_
+_+ReservationList{get;set;}: IList&lt;Reservation&gt;_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>668</y>
+      <w>138</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>MaintenanceRecordController
+--
++MaintenanceRecordController(maintenanceRecordDAL: IStorageOption&lt;MaintenanceRecord&gt;)
++GetAllMaintenanceRecord(): List&lt;MaintenanceRecord&gt;
++AddMaintenanceRecord(maintenanceRecord: MaintenanceRecord, inventoryBoat: InventoryBoat): bool
++UpdateMaintenanceRecord(maintenanceRecord: MaintenanceRecord, inventoryBoat: InventoryBoat): bool
++RemoveMaintenanceRecord(maintenanceRecord: MaintenanceRecord, inventoryBoat: InventoryBoat): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>532</y>
+      <w>34</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-maintenanceRecords</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;680.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>304</y>
+      <w>74</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>DBAccessMaintenanceRecord
+--
+-connectionString: string
+-connection: MySqlConnection
+--
++DBAccessMaintenanceRecord(connectionString: String)
++Create(inventoryItem: InventoryItem): bool
++Update(inventoryItem: InventoryItem): bool
++Read(): List&lt;InventoryItem&gt;
++Remove(inventoryItem: InventoryItem): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>282</y>
+      <w>28</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;120.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1024</x>
+      <y>664</y>
+      <w>96</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>MaintenanceRecordDAL
+--
++MaintenanceRecordDAL(dBAccessMaintenanceRecord: IStorageAccess)
++GetAll(): List&lt;MaintenanceRecord&gt;
++Update(maintenanceRecord: MaintenanceRecord): bool
++Add(maintenanceRecord: MaintenanceRecord): bool
++Remove(maintenanceRecord: MaintenanceRecord): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1118</x>
+      <y>518</y>
+      <w>168</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= -_maintenanceRecordDBAccess 
+r1= 1</panel_attributes>
+    <additional_attributes>620.0;10.0;630.0;800.0;10.0;800.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>572</y>
+      <w>592</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-maintenanceRecordDAL</panel_attributes>
+    <additional_attributes>2780.0;10.0;2780.0;520.0;10.0;530.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>504</y>
+      <w>80</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IStorageAccess
+--
++GetData(command: string): DataTable
++PostData(command: string): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1308</x>
+      <y>502</y>
+      <w>50</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>DBAccess
+--
+-connection: MySqlConnection
+--
++DBAccess(connectionString: string)
++GetData(sql: string): DataTable
++PostData(sql: string): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1246</x>
+      <y>510</y>
+      <w>66</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>332</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>_DatabaseHelper_
+--
+_+mainDatabase{get;}: string_
+_+DBNullConverter(val: string): string_
+_+BoolConverterToDB(input: bool): int_
+_+DateConverterToDB(date: DateTime): string_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>516</x>
+      <y>404</y>
+      <w>264</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-address
+r1=1</panel_attributes>
+    <additional_attributes>1250.0;140.0;1250.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>588</x>
+      <y>294</y>
+      <w>86</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>_ReservationCalculator_
+--
+_+CalculatePrice(inventoryItems: List	&lt;InventoryItems&gt;): double_
+_+CalculateDeposit(inventoryItems: List	&lt;InventoryItems&gt;): double_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>412</y>
+      <w>24</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=-InventoryItem
+r1=*</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>852</x>
+      <y>542</y>
+      <w>76</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IStorageOption&lt;T&gt;
+--
++GetAll(): List&lt;T&gt;
++Update(obj: T): bool
++Add(obj: T): bool
++Remove(obj: T): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>926</x>
+      <y>558</y>
+      <w>82</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>470</y>
+      <w>28</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>510</y>
+      <w>28</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>418</y>
+      <w>28</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;490.0;10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>514</y>
+      <w>28</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0;120.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>558</y>
+      <w>28</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;120.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>598</y>
+      <w>28</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;120.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>638</y>
+      <w>28</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0;120.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>562</y>
+      <w>40</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>CouponLocalStorage
+--
++GetAll(): List&lt;Coupon&gt;
++Update(obj: Coupon): bool
++Add(obj: Coupon): bool
++Remove(obj: Coupon): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>576</y>
+      <w>102</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>470</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>500</y>
+      <w>42</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>EmployeeLocalStorage
+--
++GetAll(): List&lt;Employee&gt;
++Update(obj: Employee): bool
++Add(obj: Employee): bool
++Remove(obj: Employee): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>510</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>630</y>
+      <w>48</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>InventoryItemLocalStorage
+--
++GetAll(): List&lt;InventoryItem&gt;
++Update(obj: InventoryItem): bool
++Add(obj: InventoryItem): bool
++Remove(obj: InventoryItem): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>638</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>956</x>
+      <y>596</y>
+      <w>36</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>ItemLocalStorage
+--
++GetAll(): List&lt;Item&gt;
++Update(obj: Item): bool
++Add(obj: Item): bool
++Remove(obj: Item): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>606</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>932</x>
+      <y>668</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>MaintenanceRecordLocalStorage
+--
++GetAll(): List&lt;MaintenanceRecord&gt;
++Update(obj: MaintenanceRecord): bool
++Add(obj: MaintenanceRecord): bool
++Remove(obj: MaintenanceRecord): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>678</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>462</y>
+      <w>42</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>CustomerLocalStorage
+--
++GetAll(): List&lt;Customer&gt;
++Add(obj: Customer): bool
++Update(obj: Customer): bool
++Remove(obj: Customer): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>410</y>
+      <w>44</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>ReservationLocalStorage
+--
++GetAll(): List&lt;Reservation&gt;
++Update(obj: Reservation): bool
++Add(obj: Reservation): bool
++Remove(obj: Reservation): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>418</y>
+      <w>18</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>312</y>
+      <w>94</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>_InventoryItemStatusCheck_
+--
+_+InventoryItemStatusUpdate(inventoryItem: InventoryItem): InventoryItem_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>562</x>
+      <y>330</y>
+      <w>26</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+ReservationStatus
+--
+COMING_SOON
+ON_RENT
+CLOSE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>330</y>
+      <w>40</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>Cart
+--
++Cart(item: Item, amount: int)
++Item{get;}: Item
++Amount{get;set;}: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>454</x>
+      <y>304</y>
+      <w>78</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>_CartHelper_
+--
+_+CartToString(carts: List&lt;Cart&gt;): string_
+_+StringToCart(cookies: string): List&lt;Cart&gt;_
+_+AddToCart(carts: List&lt;Cart&gt;, cart: Cart): List&lt;Cart&gt;_
+_+ChangeCartAmount(carts: List&lt;Cart&gt;, cart: Cart): List&lt;Cart&gt;_</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

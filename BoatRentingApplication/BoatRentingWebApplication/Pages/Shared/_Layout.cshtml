@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BoatRentingWebApplication</title>
+    <link rel="stylesheet" href="~/css/layoutstyle.css" />
+    <link rel="stylesheet" href="~/css/backgroundstyle.css" />
+    @RenderSection("CSS", required: false)
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav><ul><li><a style="visibility:hidden;">Login</a></li><li><a style="visibility:hidden;">Sign Up</a></li></ul></nav>
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Item</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-page="/ReservationPage">Reservation</a></li>
+                    }
+                    <li><a asp-page="/CartPage">Cart</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-page="/ProfilePage">Profile</a></li>
+                        <li><a asp-page="/LogoutPage">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-page="/LoginForm">Login</a></li>
+                        <li><a asp-page="/SignUpForm">Sign Up</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer class="footer text-muted">
+        <div>
+            &copy; 2021 - BoatRentingWebApplication - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

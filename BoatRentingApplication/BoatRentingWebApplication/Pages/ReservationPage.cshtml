@@ -1,0 +1,16 @@
+﻿@page
+@model BoatRentingWebApplication.Pages.ReservationPageModel
+@section CSS{
+    <link rel="stylesheet" href="~/css/reservationstyle.css" />
+}
+
+<div class="content-container">
+    @foreach (BoatRentingClassLibrary.Reservation r in Model.reservations)
+    {
+        <article class="reservation-list">
+            <label>Reference Number: <a asp-route-ReferenceNumber="@r.ReferenceNumber" asp-page="/EditReservationPage">@r.ReferenceNumber</a></label>
+            <label>Status: @r.Status</label>
+            <label>Price: @r.PriceDetail.ActualPrice</label>
+        </article>
+    }
+</div>
